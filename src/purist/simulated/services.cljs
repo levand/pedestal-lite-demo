@@ -1,0 +1,25 @@
+(ns purist.simulated.services
+  (:require [io.pedestal.app.protocols :as p]
+            [io.pedestal.app.messages :as msg]
+            [io.pedestal.app.util.platform :as platform]))
+
+(def counters (atom {"abc" 0 "xyz" 0}))
+
+(defn increment-counter [key t app]
+  (p/put-message (:input app) {msg/type :swap
+                               msg/topic [:other-counters key]
+                               :value (get (swap! counters update-in [key] inc) key)})
+  (platform/create-timeout t #(increment-counter key t app)))
+
+(defn services-fn [message input-queue]
+  (.log js/console (str "Sending message to server: " message)))
+
+(defn receive-messages [app]
+  (increment-counter "abc" 2000 app)
+  (increment-counter "xyz" 5000 app))
+
+(defrecord Services [app]
+  p/Activity
+  (start [this]
+    (receive-messages app))
+  (stop [this]))
