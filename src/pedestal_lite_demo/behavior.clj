@@ -1,4 +1,4 @@
-(ns purist.behavior
+(ns pedestal-lite-demo.behavior
     (:require [clojure.string :as string]
               [io.pedestal.app :as app]
               [io.pedestal.app.messages :as msg]

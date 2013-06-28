@@ -1,4 +1,4 @@
-(ns purist.simulated.services
+(ns pedestal-lite-demo.simulated.services
   (:require [io.pedestal.app.protocols :as p]
             [io.pedestal.app.messages :as msg]
             [io.pedestal.app.util.platform :as platform]))

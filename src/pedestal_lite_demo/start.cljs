@@ -1,13 +1,13 @@
-(ns purist.start
+(ns pedestal-lite-demo.start
   (:require [io.pedestal.app.protocols :as p]
             [io.pedestal.app :as app]
             [io.pedestal.app.render.push :as push-render]
             [io.pedestal.app.render :as render]
             [io.pedestal.app.messages :as msg]
-            [purist.behavior :as behavior]
-            #_[purist.services :as services]
-            [purist.simulated.services :as services]
-            [purist.rendering :as rendering]))
+            [pedestal-lite-demo.behavior :as behavior]
+            #_[pedestal-lite-demo.services :as services]
+            [pedestal-lite-demo.simulated.services :as services]
+            [pedestal-lite-demo.rendering :as rendering]))
 
 (defn round [n places]
   (let [p (Math/pow 10 places)]

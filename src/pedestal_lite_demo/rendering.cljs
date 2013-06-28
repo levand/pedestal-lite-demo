@@ -1,12 +1,12 @@
-(ns purist.rendering
+(ns pedestal-lite-demo.rendering
   (:require [domina :as dom]
             [io.pedestal.app.render.push :as render]
             [io.pedestal.app.render.push.handlers :as h]
             [io.pedestal.app.render.push.templates :as templates]
             [io.pedestal.app.render.push.handlers.automatic :as d])
-  (:require-macros [purist.html-templates :as html-templates]))
+  (:require-macros [pedestal-lite-demo.html-templates :as html-templates]))
 
-(def templates (html-templates/purist-templates))
+(def templates (html-templates/pedestal-lite-demo-templates))
 
 (defn render-template [template-name initial-value-fn]
   (fn [renderer [_ path :as delta] input-queue]
@@ -30,7 +30,7 @@
     (templates/update-t renderer path {:count (str new-value)})))
 
 (defn render-config []
-  [[:node-create [:tutorial] (render-template :purist-page
+  [[:node-create [:tutorial] (render-template :pedestal-lite-demo-page
                                               (constantly {:my-counter "0"}))]
    [:node-destroy [:tutorial] h/default-destroy]
    [:transform-enable [:tutorial :my-counter] (h/add-send-on-click "inc-button")]

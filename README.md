@@ -1,6 +1,6 @@
-# purist
+# pedestal-lite-demo
 
-Demo of Pedestal in a plain 'ol lein-cljsbuild app.
+Demo of Pedestal in a plain 'ol lein-cljsbuild app. Platform for other experimental work related to 'lightening' Pedestal.
 
 ## License
 

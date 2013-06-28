@@ -1,11 +1,11 @@
-(defproject purist "0.1.0-SNAPSHOT"
+(defproject pedestal-lite-demo "0.1.0-SNAPSHOT"
   :plugins [[lein-cljsbuild "0.3.2"]]
   :dependencies [[io.pedestal/pedestal.app "0.1.9"]
                  [domina "1.0.1"]
                  [org.clojure/google-closure-library-third-party "0.0-2029-2"]
                  [org.clojure/clojurescript "0.0-1586"]
                  [org.clojure/clojure "1.5.1"]]
-  :cljsbuild {:crossovers [purist.behavior
+  :cljsbuild {:crossovers [pedestal-lite-demo.behavior
                            io.pedestal.app
                            io.pedestal.app.data.change
                            io.pedestal.app.dataflow

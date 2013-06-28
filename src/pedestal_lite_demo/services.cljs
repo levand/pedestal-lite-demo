@@ -1,4 +1,4 @@
-(ns purist.services
+(ns pedestal-lite-demo.services
   (:require [io.pedestal.app.protocols :as p]
             [cljs.reader :as reader]
             [io.pedestal.app.net.xhr :as xhr]))
